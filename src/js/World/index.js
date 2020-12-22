@@ -1,4 +1,5 @@
 import { AxesHelper, Object3D } from 'three'
+import Sky from './Sky/Sky'
 
 import AmbientLightSource from './AmbientLight'
 import PointLightSource from './PointLight'
@@ -73,5 +74,13 @@ export default class World {
       assets: this.assets,
     })
     this.container.add(this.suzanne.container)
+  }
+
+  setSky() {
+    this.sky = new Sky({
+      assets: this.assets,
+      scalar: 45000
+    })
+    this.container.add(this.sky.container)
   }
 }
